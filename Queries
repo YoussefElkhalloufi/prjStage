@@ -1,0 +1,65 @@
+
+
+-------------------------------selection des noms et prenoms des agents pour chaque groupe----------------------------------------------
+
+  select (i.nom + ' ' + i.Prenom) as [nom complet d'agent], g.NOM_GRP as [Groupe] from ident i inner join MaintenantTeleope m
+  on i.Ident = m.Ident inner join groupes g 
+  on m.Grp = g.Num_Camp order by [nom complet d'agent] 
+
+--------------------------------------------------------------------------------------------------------------------------------------
+ 
+ 
+ 
+ 
+---------------------------------selection du nombre des agents actifs dans chaque groupe----------------------------------------------
+
+  select g.NOM_GRP as [Groupe], count(i.ident) as [Nombre d agent actif ] from ident i inner join MaintenantTeleope m 
+  on i.ident = m.Ident inner join groupes g
+  on m.grp = g.Num_Camp group by g.NOM_GRP
+
+
+  select count(*) as [nb agent actif] from MaintenantTeleope where grp <> 0
+
+ --------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+ ------------------------------selection du nombre des agents actifs dans chaque groupe donnée----------------------------------------------
+
+  select (i.nom + ' ' + i.Prenom) as [nom complet d'agent], g.NOM_GRP as [Groupe] from ident i inner join MaintenantTeleope m
+  on i.Ident = m.Ident inner join groupes g 
+  on m.Grp = g.Num_Camp where g.nom_grp = 'ETIENN03' order by [nom complet d'agent] 
+
+  --------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+  select * from ident 
+  select * from MaintenantTeleope 
+
+  select distinct nom_grp from Groupes
+  select * from Adress
+  select nom_grp, Num_Camp from Groupes order by num_camp 
+  select * from Groupes
+
+  select * from ident inner join Log on ident.Ident = log.Log_Ident
+
+
+
+  select i.Ident, count(*) as [Nombre de status]  from status s inner join ident i
+  on s.Status_Ident = i.Ident group by i.Ident order by [Nombre de status] asc
+
+  select top (1000) * from status s inner join ident i
+  on s.Status_Ident = i.Ident
+
+
+
+  select g.NOM_GRP as [Groupe], count(i.ident) as [Nombre d agent actif] from ident i inner join MaintenantTeleope m 
+    on i.ident = m.Ident inner join groupes g
+    on m.grp = g.Num_Camp  where m.grp <> 0 group by g.NOM_GRP 
+
+	select count(*) from MaintenantTeleope m inner join Groupes g on m.Grp = g.Num_Camp where m.Grp <> 0
+		select * from MaintenantTeleope m inner join Groupes g on m.Grp = g.Num_Camp
+		select * from groupes order by Num_Camp
+		select * from MaintenantTeleope	
