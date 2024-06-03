@@ -1,0 +1,49 @@
+/* styles.css */
+
+body {
+    font-family: arial, sans-serif;
+}
+
+h1 {
+    text-align:  center;
+}
+
+table{
+    border-collapse: collapse;
+    width: 80%; 
+    margin: 0 auto; 
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+    border: 1px solid #ddd;
+}
+
+#nb_total td{
+    font-weight: bold;
+}
+
+th {
+    font-weight : BOLD ;
+    font-size: 1.1em;
+
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #f2f2f2;
+    color: black;
+}
+
+
+tr:hover { background-color: #ddd; }
+
+/* Set the width of the first column to 60% and the second column to 40% */
+td:first-child, th:first-child {
+    width: 70%;
+}
+
+td:last-child, th:last-child {
+    width: 30%;
+}
